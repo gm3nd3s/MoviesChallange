@@ -4,7 +4,7 @@ import Minions from '../../assets/Minions-cover.png';
 import TopGun from '../../assets/Top gun-cover.png';
 import BulletTrain from '../../assets/Bullet Train-cover.png';
 import Thor from '../../assets/Thor-cover.png';
-import PurpleHearts from '../../assets/PurpleHearts.jpg';
+import PurpleHearts from '../../assets/purpleHearts.jpg';
 import BlackPanther from '../../assets/blackPanther.jpg';
 import GodFather from '../../assets/GodFather.jpg';
 import BuzzLightyear from '../../assets/buzzLightyear.jpg';

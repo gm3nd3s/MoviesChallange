@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import './App.css';
 import { Background, Header, Footer, Questionnary } from './components';
 
 const Home = styled.main`
