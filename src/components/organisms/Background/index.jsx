@@ -6,10 +6,10 @@ const BackgroundWrapper = styled.div`
 	height: 100%;
 	position: fixed;
 	top: 0;
+	object-fit: cover;
 `;
 
 const BackgroundImage = styled.img`
-	width: 100%;
 	height: 100%;
 	opacity: 100%;
 `;
