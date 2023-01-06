@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -6,19 +5,20 @@ import { questions } from '../../../utils';
 import { Eclipse } from './Eclipse';
 
 const Wrapper = styled.div`
-	height: 97px;
-	width: 220px;
-	border-radius: 8px;
-	background-color: #ffffff;
-	align-self: center;
-	color: #22daa8;
-	font-weight: 700;
+	min-height: 97px;
+	min-width: 220px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 	flex-shrink: none;
 	flex-wrap: none;
+	align-self: center;
+	font-weight: 700;
 	text-align: center;
+	color: #22daa8;
+	background-color: #ffffff;
+	border-radius: 8px;
+
 	p {
 		align-self: center;
 		padding: 0;
@@ -29,12 +29,11 @@ const Wrapper = styled.div`
 const EclipseWrapper = styled.div`
 	height: 18px;
 	width: 96px;
-	margin: auto 0;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
 	align-self: center;
-	margin-top: 13px;
+	margin: 13px 0 auto 0;
 `;
 
 export const ProgressCard = ({ questionNum }) => {

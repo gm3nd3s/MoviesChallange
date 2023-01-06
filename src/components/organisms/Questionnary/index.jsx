@@ -16,25 +16,27 @@ const QuestionnaryWrapper = styled.section`
 	flex-direction: column;
 	justify-content: flex-start;
 	background-color: transparent;
-	transition: opacity 0.25s ease-in-out;
-	-moz-transition: opacity 0.25s ease-in-out;
-	-webkit-transition: opacity 0.25s ease-in-out;
+	transition: opacity 1s ease-in-out;
 `;
 
 const Question = styled.h1`
 	font-weight: 600;
 	text-align: center;
 	font-size: 34px;
+	line-height: 40px;
 `;
 
 const CardsWrapper = styled.div`
 	width: 100%;
 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: center;
 	gap: 34px;
 	overflow: hidden;
 	align-self: center;
 	margin: 0 auto;
+	overflow-y: scroll;
 `;
 
 const CardButton = styled.button`
@@ -49,6 +51,14 @@ const CardButton = styled.button`
 	:hover .overlay {
 		opacity: 1;
 	}
+	@media screen and (max-width: 860px) {
+		width: 140px;
+		height: 190px;
+	}
+	@media screen and (max-width: 660px) {
+		width: 100px;
+		height: 145px;
+	}
 `;
 const Overlay = styled.span`
 	background: rgb(255, 255, 255);
@@ -58,6 +68,14 @@ const Overlay = styled.span`
 	position: absolute;
 	opacity: 0;
 	border-radius: 10px;
+	@media screen and (max-width: 860px) {
+		width: 140px;
+		height: 190px;
+	}
+	@media screen and (max-width: 660px) {
+		width: 100px;
+		height: 145px;
+	}
 `;
 
 export const Questionnary = () => {

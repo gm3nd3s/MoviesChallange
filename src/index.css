@@ -3,7 +3,7 @@
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 400;
-
+	min-width: 400px;
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);
 	background-color: #242424;
@@ -15,16 +15,14 @@
 	-webkit-text-size-adjust: 100%;
 }
 
+main {
+	min-width: 400px;
+}
 body {
 	margin: 0;
 	display: flex;
 	justify-content: center;
 	place-items: center;
-	min-width: 320px;
+	min-width: 400px;
 	min-height: 100vh;
-}
-
-.transition {
-	opacity: 0;
-	transition: opacity 300ms;
 }

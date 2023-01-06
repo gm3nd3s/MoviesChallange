@@ -10,7 +10,15 @@ const CardImage = styled.img`
 	object-fit: fill;
 	box-sizing: content-box;
 	cursor: pointer;
-	object-fit: cover;
+	object-fit: fill;
+	@media screen and (max-width: 860px) {
+		width: 140px;
+		height: 190px;
+	}
+	@media screen and (max-width: 660px) {
+		width: 100px;
+		height: 145px;
+	}
 `;
 
 export const MovieCard = ({ img, alt }) => {

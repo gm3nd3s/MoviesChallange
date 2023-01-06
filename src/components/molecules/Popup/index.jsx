@@ -26,6 +26,11 @@ const AdWrapper = styled.div`
 		font-weight: 400;
 		font-size: 24px;
 	}
+
+	@media screen and (max-width: 860px) {
+		width: 400px;
+		height: 600px;
+	}
 `;
 
 const ParagraphWrapper = styled.div``;
@@ -47,6 +52,11 @@ const Button = styled.button`
 	:hover {
 		background-color: #fe3f11;
 	}
+	@media screen and (max-width: 860px) {
+		width: 340px;
+		height: 60px;
+		font-size: 28px;
+	}
 `;
 
 export const Popup = ({ url }) => {
@@ -57,6 +67,7 @@ export const Popup = ({ url }) => {
 				<p>Watch any movies online for free without ads!</p>
 				<p>Have fun watching your favourite movies!</p>
 			</ParagraphWrapper>
+
 			<Button
 				onClick={(e) => {
 					e.stopPropagation();
