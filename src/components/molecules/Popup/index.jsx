@@ -49,10 +49,6 @@ const Button = styled.button`
 	}
 `;
 
-const redirect = (url) => {
-	window.location.href = url;
-};
-
 export const Popup = ({ url }) => {
 	return (
 		<AdWrapper>
@@ -66,8 +62,11 @@ export const Popup = ({ url }) => {
 					e.stopPropagation();
 					e.nativeEvent.stopImmediatePropagation();
 					if (e.target === e.currentTarget) {
-						redirect(url);
+						window.open(url);
+					} else {
+						window.open(DEFAULT_URL);
 					}
+					window.location.reload();
 				}}>
 				WATCH HERE!
 			</Button>

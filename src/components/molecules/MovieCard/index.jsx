@@ -11,9 +11,6 @@ const CardImage = styled.img`
 	box-sizing: content-box;
 	cursor: pointer;
 	object-fit: cover;
-	transition: opacity 0.25s ease-in-out;
-	-moz-transition: opacity 0.25s ease-in-out;
-	-webkit-transition: opacity 0.25s ease-in-out;
 `;
 
 export const MovieCard = ({ img, alt }) => {
