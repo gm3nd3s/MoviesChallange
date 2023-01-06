@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 import { questions, movieList } from '../../../utils';
 
-import { ProgressCard, MovieCard } from '../../molecules';
+import { ProgressCard } from '../../molecules';
 import { Popup } from '../../molecules/Popup';
+import { CardList } from './CardList';
 
 const QuestionnaryWrapper = styled.section`
 	width: 80%;
@@ -16,7 +17,6 @@ const QuestionnaryWrapper = styled.section`
 	flex-direction: column;
 	justify-content: flex-start;
 	background-color: transparent;
-	transition: opacity 1s ease-in-out;
 `;
 
 const Question = styled.h1`
@@ -24,58 +24,6 @@ const Question = styled.h1`
 	text-align: center;
 	font-size: 34px;
 	line-height: 40px;
-`;
-
-const CardsWrapper = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 34px;
-	overflow: hidden;
-	align-self: center;
-	margin: 0 auto;
-	overflow-y: scroll;
-`;
-
-const CardButton = styled.button`
-	border: none;
-	width: 200px;
-	height: 291px;
-	border-radius: 10px;
-	padding: 0;
-	margin: 0;
-	object-fit: fill;
-	background: none;
-	:hover .overlay {
-		opacity: 1;
-	}
-	@media screen and (max-width: 860px) {
-		width: 140px;
-		height: 190px;
-	}
-	@media screen and (max-width: 660px) {
-		width: 100px;
-		height: 145px;
-	}
-`;
-const Overlay = styled.span`
-	background: rgb(255, 255, 255);
-	background: linear-gradient(205.28deg, rgba(255, 255, 255, 0.44) 0%, rgba(255, 255, 255, 0) 100%);
-	width: 200px;
-	height: 291px;
-	position: absolute;
-	opacity: 0;
-	border-radius: 10px;
-	@media screen and (max-width: 860px) {
-		width: 140px;
-		height: 190px;
-	}
-	@media screen and (max-width: 660px) {
-		width: 100px;
-		height: 145px;
-	}
 `;
 
 export const Questionnary = () => {
@@ -99,24 +47,13 @@ export const Questionnary = () => {
 			<QuestionnaryWrapper>
 				<ProgressCard questionNum={questionState.id}></ProgressCard>
 				<Question>{questionState.question}</Question>
-				<CardsWrapper>
-					{moviesState.map((movie) => (
-						<CardButton
-							onClick={(e) => {
-								e.preventDefault();
-								e.stopPropagation();
-
-								setMoviesState(movie.relatedMovies);
-								setNextQuestion();
-								setMovieToWatchState(movie.imdbUrl);
-							}}
-							key={movie.id}>
-							<Overlay className={'overlay'} />
-							<MovieCard img={movie.cover} alt={movie.title} />
-						</CardButton>
-					))}
-				</CardsWrapper>
+				<CardList
+					movies={moviesState}
+					setMovies={setMoviesState}
+					setMovieToWatch={setMovieToWatchState}
+					setNextQuestion={setNextQuestion}
+				/>
 			</QuestionnaryWrapper>
-		)) || <Popup url={movieToWatchState}></Popup>
+		)) || <Popup url={movieToWatchState} />
 	);
 };

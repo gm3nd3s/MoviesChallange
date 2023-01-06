@@ -21,8 +21,31 @@ const CardImage = styled.img`
 	}
 `;
 
+const Overlay = styled.span`
+	background: rgb(255, 255, 255);
+	background: linear-gradient(205.28deg, rgba(255, 255, 255, 0.44) 0%, rgba(255, 255, 255, 0) 100%);
+	width: 200px;
+	height: 291px;
+	position: absolute;
+	opacity: 0;
+	border-radius: 10px;
+	@media screen and (max-width: 860px) {
+		width: 140px;
+		height: 190px;
+	}
+	@media screen and (max-width: 660px) {
+		width: 100px;
+		height: 145px;
+	}
+`;
+
 export const MovieCard = ({ img, alt }) => {
-	return <CardImage className={'overlay'} src={img} alt={alt} />;
+	return (
+		<>
+			<Overlay className={'overlay'} />
+			<CardImage className={'overlay'} src={img} alt={alt} />
+		</>
+	);
 };
 
 MovieCard.propTypes = {
